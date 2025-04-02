@@ -1,0 +1,278 @@
+:root {
+
+    --primary: #a890fe; /* light purple */
+    --primary-dark: #8c7ae6;
+    --secondary: #ffc75f; /* Goldish */
+    --dark: #2c3e50; /* Darkish */
+    --light: #ecf0f1; /* Light Gray */
+    --success: #2ecc71; /* Green */
+    --error: #e74c3c; /* Red */
+    --border-radius: 24px;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+body {
+    /* DARK STARRY NIGHT BACKGROUND*/
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #1a1a2e;
+    color: var(--light);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100'%3E%3Cdefs%3E%3CradialGradient id='a' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%23222238'/%3E%3Cstop offset='100%25' stop-color='%231a1a2e'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Canimate attributeName='fill-opacity' dur='2s' repeatCount='indefinite' values='0.2;0.4;0.2'/%3E%3Ccircle cx='10' cy='10' r='1.5'/%3E%3Ccircle cx='30' cy='20' r='2'/%3E%3Ccircle cx='50' cy='30' r='1.8'/%3E%3Ccircle cx='70' cy='40' r='2.2'/%3E%3Ccircle cx='90' cy='50' r='2.5'/%3E%3Ccircle cx='20' cy='60' r='1.5'/%3E%3Ccircle cx='40' cy='70' r='2'/%3E%3Ccircle cx='60' cy='80' r='1.8'/%3E%3Ccircle cx='80' cy='90' r='2.2'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+}
+
+.login-container,
+.connected-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 3rem;
+}
+
+.card {
+    /* Add some flare to those cards */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    padding: 4rem;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(60deg, var(--primary), var(--secondary), var(--primary));
+    z-index: -1;
+    border-radius: inherit;
+    filter: blur(15px);
+    opacity: 0.5;
+}
+
+.card:hover {
+    /* Hover for extra cool effect */
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-message,
+.connected-header {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.connected-account,
+.connected-contract-address {
+    /* As long as they part of connected SAME STYLING! */
+    font-family: 'Roboto Mono', monospace;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    word-break: break-all;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-button{
+    /* This design applies to the vote button too REMEMBER! */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary), var(--secondary)); /* Angled Gradient */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1.3rem 2.8rem; /* Slightly larger padding */
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    z-index: 1; /* Ensure button content is above pseudo-elements */
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary), var(--secondary)); /* Angled Gradient */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1.3rem 2.8rem; /* Slightly larger padding */
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    z-index: 1; /* Ensure button content is above pseudo-elements */
+}
+
+.button::before,
+.button::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    z-index: -1;
+}
+
+/* Let's get nitty gritty with button technicalities */
+
+.button::before {
+    top: -50%;
+    left: -25%;
+    transform: translate(0, 0) rotate(-45deg);
+}
+
+.button::after {
+    bottom: -50%;
+    right: -25%;
+    transform: translate(0, 0) rotate(45deg);
+}
+
+.button:hover::before,
+.button:hover::after {
+    opacity: 1;
+    transform: translate(10%, 10%) rotate(0deg); /* Move on hover */
+}
+
+.button:hover {
+    transform: translateY(-4px); /* Slight lift on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button span { /* For text */
+    position: relative;
+    z-index: 2;
+}
+
+.candidates-table {
+    /* This is very important, the table design matters most */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 2.5rem 0;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.candidates-table th {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    padding: 1.4rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.candidates-table td {
+    padding: 1.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.35s ease;
+}
+
+.candidates-table tr:last-child td {
+    border-bottom: none;
+}
+
+.candidates-table tr:hover td {
+    background-color: rgba(99, 102, 241, 0.05);
+}
+
+.input-field {
+    width: 100%;
+    padding: 1.2rem 1.6rem;
+    font-size: 1.1rem;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    margin-bottom: 1.8rem;
+}
+
+/* Let's give it that little cool shadow */
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-active {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: var(--success);
+}
+
+.status-ended {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--error);
+}
+
+.animate-in {
+    animation: fadeIn 0.65s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 3rem;
+        width: 95%;
+    }
+
+    .welcome-message,
+    .connected-header {
+        font-size: 2.3rem;
+    }
+}
