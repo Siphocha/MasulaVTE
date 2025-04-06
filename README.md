@@ -16,7 +16,7 @@ Once installed state this in the terminal:
 npm install
 ````
 That'll instlal all the modules needed for the project. BE AWARE:
-If you install 2+ months after original date, no guarantee librbary updates wont interfere with each other.
+If you install 2+ months after the original date, no guarantee librbary updates wont interfere with each other.
 
 then go to the .env and replace private key with your own wallets private key, the API with your own Alchemy API, and contract address with your ran contract address.
 ```
@@ -36,7 +36,7 @@ in that file replace the contract address with your own. THEN also replace the "
 Where can you find your own abi? In artifacts/contracts/Procedure.sol/Procedure.json
 Once done configuration with the EVM is basically done..basically.
 
-SIGNUP FOR METAMASK AND HAVE THE BROWSER EXTENSION ALREADY READY!
+SIGN UP FOR METAMASK AND HAVE THE BROWSER EXTENSION ALREADY READY! VISIT A "SEPOLIA FAUCET" ONLINE TO GET FREE "SEPOLIA-ETH" FOR TRANSACTION COSTS
 
 Smart Contract Deployment
 1. Compile Contract
